@@ -1,0 +1,171 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Eweisser.com: portfolio for Eric Weisser</title>
+<style>
+
+body {
+  font-family: "Calibri";
+  margin: 10px;
+}
+
+#content {
+  background-color: #FFF;
+  position: absolute;
+  left: 40px;
+  top: 30px;
+  padding: 10px 10px 10px 25px;
+  animation: textAnimation;
+  animation-duration: 1s;
+  animation-delay: 1.2s;
+  animation-fill-mode: both;
+  z-index: 0;
+  mix-blend-mode: lighten;
+}
+
+@keyframes textAnimation {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+#verticalStripe {
+  background-image: linear-gradient(to bottom, #8DF 0%, #FFF 95%);
+  position: fixed;
+    left: 30px;
+    top: -100vh;
+    height: 100vh;
+    width: 10px;
+  animation: vsAnimation;
+  animation-duration: 0.5s;
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+  z-index: 1;
+  mix-blend-mode: darken;
+}
+
+@keyframes vsAnimation {
+  0% {top: -100vh;}
+  100% {top: 0;}
+}
+
+#horizontalStripe {
+  background-image: linear-gradient(to right, #8DF 0%, #FFF 95%);
+  position: fixed;
+    top: 20px;
+    left: -100vw;
+    height: 10px;
+    width: 100vw;
+  animation: hsAnimation;
+  animation-duration: 0.5s;
+  animation-delay: 0.7s;
+  animation-fill-mode: forwards;
+  z-index: 1;
+  mix-blend-mode: darken;
+}
+
+@keyframes hsAnimation {
+  0% {left: -100vw;}
+  100% {left: 0;}
+}
+
+#topWhite {
+  background-color: #FFF;
+  position: fixed;
+    left: 40px;
+    top: 0px;
+    height: 20px;
+    width: calc(100% - 40px);
+  z-index: 1;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 40px;
+}
+
+.indent {
+  margin-left: 20px;
+}
+
+a:link, a:visited, a:active {
+  text-decoration: none;
+  /* color: #0000A8; */
+  /* color: #0040C0; */
+  color: #4AF;
+  animation: textAnimation;
+  animation-duration: 1s;
+  animation-delay: 1.2s;
+  animation-fill-mode: both;
+}
+
+a:hover {
+  text-decoration: none;
+  /* color: #0000A8; */
+  color: #007FFF;
+  animation: textAnimation;
+  animation-duration: 1s;
+  animation-delay: 1.2s;
+  animation-fill-mode: both;
+}
+
+</style>
+</head>
+
+<body>
+
+  <div class="stripe" id="verticalStripe"></div>
+  <div class="stripe" id="horizontalStripe"></div>
+  <div id="topWhite"></div>
+
+<div id="content">
+
+    <p>
+      <b>Hello</b>, thank you for taking the time to look at my portfolio. You can also see my work on Github <b><a href="https://github.com/eweisser">here</a></b>. I'm adding to this page quickly—please visit again soon to see more of my work.
+    </p>
+
+    <p class="indent">
+      <a href="names.html"><b>Analysis and visualization of the distribution of given names in the US by state in Python</b></a><br>
+      Please note: a Django application for this project is under development.
+    </p>
+
+    <p class="indent">
+      <a href="hangulFreq.html"><b>Data (written Korean syllable frequency) analysis and visualization in Python and Javascript</b></a>
+    </p>
+
+    <p class="indent">
+      <a href="calculator/calculator.html"><b>A simple calculator in React.js</b></a>
+    </p>
+
+    <p class="indent">
+      <b>Word games in Javascript</b><br>
+      All of the following games were written for use by students I taught in my former job in South Korea; the content reflects that curriculum.
+      <ul>
+        <li><a href="games/storix/hippos/game1monsters.html">Hippos and watermelons</a>
+        <li><a href="games/storix/platform/game2monsters.html">Platformer</a>
+        <li><a href="games/storix/butterflies/game3monsters.html">Butterflies</a>
+        <li><a href="games/storix/bakery/game4monsters.html">Bakery</a>
+        <li><a href="games/spaceship">Spaceship</a>
+      </ul>
+    </p>
+
+    <p class="indent">
+      <a href="hangullessons"><b>Korean writing system lessons in Javascript</b></a>
+    </p>
+
+    <p class="indent">
+      <b>Projects coming soon:</b>
+      <ul>
+        <li>Genealogy database in Python and SQL
+        <li>Word guessing game with simple AI in Python
+        <li>Data (CO<sub>2</sub> emissions) analysis and visualization in Python with matplotlib
+      </ul>
+    </p>
+
+    <!-- <p>
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    </p> -->
+
+</div>  <!-- end of content div -->
+
+</body>
+</html>
