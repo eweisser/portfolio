@@ -8,6 +8,7 @@ body {
   background-color: #282c34;
   box-sizing: border-box;
   font-family: "Calibri", "Consolas", sans-serif;
+  font-size: 13pt;
   margin: 0;
   padding: 0;
 }
@@ -21,12 +22,14 @@ div {
   color: #abb2bf;
   font-family: "Menlo", "Consolas", "DejaVu Sans Mono", monospace;
   font-size: 15px;
+  line-height: 20px;
   overflow: hidden;
   padding: 12px;
   position: absolute;
     left: 0;
     height: 108px;
     width: 95vw;
+  white-space: nowrap;
 }
 
 #headerheader {
@@ -35,6 +38,11 @@ div {
 
 .lighter {
   color: #ffffff;
+}
+
+.darker {
+  color: #5c6370;
+  font-style: italic;
 }
 
 .grn {
@@ -47,6 +55,28 @@ div {
 
 .prpl {
   color: #c678dd;
+}
+
+.tallChar {
+  font-size: 20px;
+  visibility: hidden;
+}
+
+#typewriter {
+  position: relative;
+}
+
+#typewriter::after {
+			content: "|";
+			animation: blink 0.9s linear 0s infinite alternate none running;
+      animation-timing-function: cubic-bezier(1,0,0,1);
+      color: #528bff;
+      font-size: 20px;
+      font-weight: bolder;
+}
+
+@keyframes blink {
+	50% {opacity: 0;}
 }
 
 #content {
@@ -69,9 +99,10 @@ p#intro {
 
 .projectDiv {
   display: grid;
-    grid-template-columns: 150px auto;
-    grid-column-gap: 30px;
+    grid-template-columns: 120px auto;
+    grid-column-gap: 50px;
   margin: auto auto 40px 30px;
+  align-items: center;
 }
 
 .projectExampleImage {
@@ -83,61 +114,6 @@ p#intro {
   background-color: #fff;
   grid-column: 2 / span 1;
 }
-
-/* @keyframes textAnimation {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-} */
-
-/* #verticalStripe {
-  background-image: linear-gradient(to bottom, #8DF 0%, #FFF 95%);
-  position: fixed;
-    left: 30px;
-    top: -100vh;
-    height: 100vh;
-    width: 10px;
-  animation: vsAnimation;
-  animation-duration: 0.5s;
-  animation-delay: 0.2s;
-  animation-fill-mode: forwards;
-  z-index: 1;
-  mix-blend-mode: darken;
-}
-
-@keyframes vsAnimation {
-  0% {top: -100vh;}
-  100% {top: 0;}
-}
-
-#horizontalStripe {
-  background-image: linear-gradient(to right, #8DF 0%, #FFF 95%);
-  position: fixed;
-    top: 20px;
-    left: -100vw;
-    height: 10px;
-    width: 100vw;
-  animation: hsAnimation;
-  animation-duration: 0.5s;
-  animation-delay: 0.7s;
-  animation-fill-mode: forwards;
-  z-index: 1;
-  mix-blend-mode: darken;
-}
-
-@keyframes hsAnimation {
-  0% {left: -100vw;}
-  100% {left: 0;}
-}
-
-#topWhite {
-  background-color: #FFF;
-  position: fixed;
-    left: 40px;
-    top: 0px;
-    height: 20px;
-    width: calc(100% - 40px);
-  z-index: 1;
-} */
 
 ul {
   list-style-type: none;
@@ -170,32 +146,50 @@ a:hover {
 }
 
 </style>
+
 </head>
 
 <body>
 
 <div id="header">
-  <div id="headerheader"><span class="lighter">Eric Weisser</span>, software <span class="prpl">and</span> web developer. Coder. Linguist. Teacher. Onomasticist. Board game enthusiast. Baker. Clarinetist. Cat guy.</div>
-  <span class="prpl">for</span> firstName <span class="prpl">in</span> byNameDictio.<span class="blue">keys</span>():<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;mean <span class="prpl">=</span> statistics.<span class="blue">mean</span>(byNameDictio[firstName].<span class="blue">values</span>())<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;pStDev <span class="prpl">=</span> statistics.<span class="blue">pstdev</span>(byNameDictio[firstName].<span class="blue">values</span>())<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;byNameDictio[firstName][<span class="grn">'mean'</span>] <span class="prpl">=</span> mean
+
+  <div id="headerheader"><span class="lighter">Eric Weisser</span>, software <span class="prpl">and</span> web developer. <span class="darker"># Coder. Linguist. Teacher. Onomasticist. Board game enthusiast. Baker. Clarinetist. 한국어를 공부하는 학생. Cat guy.</span></div>
+
+  <div id="typewriter">
+    <span class="prpl">for</span> firstName <span class="prpl">in</span> byNameDictio.<span class="blue">keys</span>():<span class="tallChar">|</span><br></br>
+
+    ****mean <span class="prpl">=</span> statistics.<span class="blue">mean</span>(byNameDictio[firstName].<span class="blue">values</span>())<span class="tallChar">|</span><br></br>
+
+    ****pStDev <span class="prpl">=</span> statistics.<span class="blue">pstdev</span>(byNameDictio[firstName].<span class="blue">values</span>())<span class="tallChar">|</span><br></br>
+
+    ****byNameDictio[firstName][<span class="grn">'mean'</span>] <span class="prpl">=</span> mean<span class="tallChar">|</span><br></br>
+
+    ****byNameDictio[firstName][<span class="grn">'pStDev'</span>] <span class="prpl">=</span> pStDev<span class="tallChar">|</span><br></br>
+
+    <span class="darker"># Great, we've included the mean and the standard deviation (p-type). Now we need to create a dictionary for residuals.</span><span class="tallChar">|</span><br></br>
+
+    residualsDictio <span class="prpl">=</span> byNameDictio.<span class="blue">copy</span>()***<span class="darker"># The .copy() method makes an independent copy--they're not linked</span><span class="tallChar">|</span><br></br>
+
+    <span class="prpl">for</span> firstName <span class="prpl">in</span> residualsDictio.<span class="blue">keys</span>():<span class="tallChar">|</span><br></br>
+
+  </div>
+
 </div>
 
 <div id="content">
     <p id="intro">
-      <b>Hello</b>, thank you for taking the time to look at my portfolio. You can also see my work on Github <b><a href="https://github.com/eweisser">here</a></b> or visit my LinkedIn profile <b><a href="https://www.linkedin.com/in/eric-weisser-5337073b/">here</a></b>. I'm adding to this page quickly—please visit again soon to see more of my work.
+      <b>Hello</b>, I'm Eric Weisser! Thank you for taking the time to look at my portfolio. You can also see my work on Github <b><a href="https://github.com/eweisser">here</a></b> or visit my LinkedIn profile <b><a href="https://www.linkedin.com/in/eric-weisser-5337073b/">here</a></b>. I'm adding to this page quickly—please visit again soon to see more of my work.
     </p>
 
     <div class="projectDiv">
-      <img class="projectExampleImage" src="eg_hangul_syllable_blocks.png">
+      <img class="projectExampleImage" src="eg_map200.png">
       <div class="projectDescription">
         <a href="names.html"><b>Analysis and visualization of the distribution of given names in the US by state in Python</b></a><br>Please note: a Django application for this project is under development.
       </div>
     </div>
 
     <div class="projectDiv">
-      <img class="projectExampleImage" src="eg_hangul_syllable_blocks.png">
+      <img class="projectExampleImage" src="eg_hangul_syllable_blocks4.png">
       <div class="projectDescription">
         <a href="hangulFreq.html"><b>Data (written Korean syllable frequency) analysis and visualization in Python and Javascript</b></a>
       </div>
@@ -204,7 +198,8 @@ a:hover {
     <div class="projectDiv">
       <img class="projectExampleImage" src="eg_calculator_react.png">
       <div class="projectDescription">
-        <a href="calculator/calculator.html"><b>A simple calculator in React.js</b></a>
+        <a href="calculator/calculator.html"><b>A simple calculator in React.js</b></a><br>
+        Although functional, there are a few more features I'd like to implement for this calculator. I wrote it using JSX and the <a href="https://babeljs.io/repl">Babel JavaScript compiler</a>.
       </div>
     </div>
 
@@ -224,7 +219,7 @@ a:hover {
     </div>
 
     <div class="projectDiv">
-      <img class="projectExampleImage" src="eg_hangul_syllable_blocks.png">
+      <img class="projectExampleImage" src="eg_hangul_lessons.png">
       <div class="projectDescription">
         <a href="hangullessons"><b>Korean writing system lessons in Javascript</b></a>
       </div>
@@ -244,6 +239,97 @@ a:hover {
     </p> -->
 
 </div>  <!-- end of content div -->
+
+
+<script defer>
+
+function setupTypewriter(t) {             // This is a great little feature, isn't it? I can't take credit it for it,
+	    var HTML = t.innerHTML;            // it's from <https://codepen.io/stevn/pen/jEZvXa?editors=0010>
+	    t.innerHTML = "";                    // of course, I did have to adapt it for my own case.
+
+	    var cursorPosition = 0,
+	        tag = "",
+	        writingTag = false,
+	        tagOpen = false,
+	        typeSpeed = 10,
+          tempTypeSpeed = 0;
+          lineCount = 0;
+
+	    var type = function() {
+
+	        if (writingTag === true) {
+	            tag += HTML[cursorPosition];
+	        }
+
+	        if (HTML[cursorPosition] === "<") {    // when we encounter a '<' symbol, freeze the typeSpeed, then check if tagOpen is true
+	            tempTypeSpeed = 0;
+	            if (tagOpen) {
+	                tagOpen = false;
+	                writingTag = true;
+	            } else {               // if we haven't finished writing an opening tag...
+	                tag = "";
+	                tagOpen = true;
+	                writingTag = true;
+	                tag += HTML[cursorPosition];   // write the current text in 'tag'
+	            }
+	        }
+
+	        if (!writingTag && tagOpen) {
+	            tag.innerHTML += HTML[cursorPosition];
+	        }
+	        if (!writingTag && !tagOpen) {                   // normal text writing condition--stuff just gets added to t's innerHTML
+	            if (HTML[cursorPosition] === " ") {
+	                tempTypeSpeed = 0;
+	            }
+	            else {
+	                tempTypeSpeed = typeSpeed + Math.floor(Math.random()*20);
+	            }
+              if (HTML[cursorPosition] === "*") {
+                  t.innerHTML += "&nbsp;";
+              } else {
+                  t.innerHTML += HTML[cursorPosition];
+              }
+	        }
+	        if (writingTag === true && HTML[cursorPosition] === ">") {
+	            tempTypeSpeed = typeSpeed;
+	            writingTag = false;            // we encountered '>', so we are not writingTag anymore
+	            if (tagOpen) {
+                  if (tag === "<br>") {
+                      t.innerHTML += "<br>";
+                      lineCount += 1;
+                      // console.log(lineCount);
+                      if (lineCount > 2) {
+                        t.innerHTML = t.innerHTML.replace(/.*\n\n/,"");
+                        // t.innerHTML = t.innerHTML.slice();
+                        console.log(t.innerHTML);
+                      }
+                  } else {
+    	                var newSpan = document.createElement("span");
+    	                t.appendChild(newSpan);
+    	                newSpan.innerHTML = tag;
+    	                tag = newSpan.firstChild;
+                  }
+	            }
+              // console.log(tag);
+	        }
+
+	        cursorPosition += 1;
+	        if (cursorPosition < HTML.length - 1) {
+	            setTimeout(type, tempTypeSpeed);
+	        }
+
+	    };
+
+	    return {
+	        type: type
+	    };
+	}
+
+	var typer = document.getElementById('typewriter');
+	typewriter = setupTypewriter(typer);
+	typewriter.type();
+
+</script>
 
 </body>
 </html>
