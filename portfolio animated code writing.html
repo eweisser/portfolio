@@ -45,6 +45,10 @@ div {
   font-style: italic;
 }
 
+.orng {
+  color: #d19a66;
+}
+
 .grn {
   color: #98c379;
 }
@@ -64,6 +68,7 @@ div {
 
 #typewriter {
   position: relative;
+  white-space: normal;
 }
 
 #typewriter::after {
@@ -77,6 +82,10 @@ div {
 
 @keyframes blink {
 	50% {opacity: 0;}
+}
+
+#originalText {
+  display: none;
 }
 
 #content {
@@ -156,6 +165,9 @@ a:hover {
   <div id="headerheader"><span class="lighter">Eric Weisser</span>, software <span class="prpl">and</span> web developer. <span class="darker"># Coder. Linguist. Teacher. Onomasticist. Board game enthusiast. Baker. Clarinetist. 한국어를 공부하는 학생. Cat guy.</span></div>
 
   <div id="typewriter">
+  </div>
+
+  <div id="originalText">
     <span class="prpl">for</span> firstName <span class="prpl">in</span> byNameDictio.<span class="blue">keys</span>():<span class="tallChar">|</span><br></br>
 
     ****mean <span class="prpl">=</span> statistics.<span class="blue">mean</span>(byNameDictio[firstName].<span class="blue">values</span>())<span class="tallChar">|</span><br></br>
@@ -171,6 +183,32 @@ a:hover {
     residualsDictio <span class="prpl">=</span> byNameDictio.<span class="blue">copy</span>()***<span class="darker"># The .copy() method makes an independent copy--they're not linked</span><span class="tallChar">|</span><br></br>
 
     <span class="prpl">for</span> firstName <span class="prpl">in</span> residualsDictio.<span class="blue">keys</span>():<span class="tallChar">|</span><br></br>
+
+    ****<span class="prpl">for</span> state <span class="prpl">in</span> residualsDictio[firstName].<span class="blue">keys</span>():<span class="tallChar">|</span><br></br>
+
+    ********residualsDictio[firstName][state] <span class="prpl">=</span> byNameDictio[firstName][state] <span class="prpl">-</span> byNameDictio[firstName][<span class="grn">'mean'</span>]<span class="tallChar">|</span><br></br>
+
+    <span class="darker"># And now we have a dictionary full of residuals, fantastic! Now we need a dictionary for "what percentage of a standard deviation each residual is".</span><span class="tallChar">|</span><br></br>
+
+    resStDevPercDictio <span class="prpl">=</span> byNameDictio.<span class="blue">copy</span>()<span class="tallChar">|</span><br></br>
+
+    <span class="prpl">for</span> firstName <span class="prpl">in</span> resStDevPercDictio.<span class="blue">keys</span>():</span><span class="tallChar">|</span><br></br>
+
+    ****<span class="prpl">for</span> state <span class="prpl">in</span> resStDevPercDictio[firstName].<span class="blue">keys</span>():</span><span class="tallChar">|</span><br></br>
+
+    ********<span class="prpl">if</span> byNameDictio[firstName][<span class="grn">'pStDev'</span>] <span class="prpl">!=</span> <span class="orng">0</span>:</span><span class="tallChar">|</span><br></br>
+
+    ************resStDevPercDictio[firstName][state] <span class="prpl">=</span> residualsDictio[firstName][state] <span class="prpl">/</span> byNameDictio[firstName][<span class="grn">'pStDev'</span>]</span><span class="tallChar">|</span><br></br>
+
+    ****resStDevPercDictio[firstName].<span class="blue">pop</span>(<span class="grn">'mean'</span>)</span><span class="tallChar">|</span><br></br>
+
+    ****resStDevPercDictio[firstName].<span class="blue">pop</span>(<span class="grn">'pStDev'</span>)</span><span class="tallChar">|</span><br></br>
+
+    <span class="darker"># for key in resStDevPercDictio.keys():</span></span><span class="tallChar">|</span><br></br>
+
+    ****<span class="darker"># print(key)</span></span><span class="tallChar">|</span><br></br>
+
+    <span class="prpl">return</span> resStDevPercDictio</span><span class="tallChar">|</span><br></br>
 
   </div>
 
@@ -191,7 +229,8 @@ a:hover {
     <div class="projectDiv">
       <img class="projectExampleImage" src="eg_hangul_syllable_blocks4.png">
       <div class="projectDescription">
-        <a href="hangulFreq.html"><b>Data (written Korean syllable frequency) analysis and visualization in Python and Javascript</b></a>
+        <a href="hangulFreq.html"><b>Data (written Korean syllable frequency) analysis and visualization in Python and Javascript</b></a><br>
+        The Korean writing system, called Hangul, is unique; each sound has a symbol, but these symbols are arranged in square blocks so that each block represents one syllable. This makes it easier to analyze syllabic patterns in Korean than in other languages.
       </div>
     </div>
 
@@ -244,7 +283,7 @@ a:hover {
 <script defer>
 
 function setupTypewriter(t) {             // This is a great little feature, isn't it? I can't take credit it for it,
-	    var HTML = t.innerHTML;            // it's from <https://codepen.io/stevn/pen/jEZvXa?editors=0010>
+	    var HTML = document.getElementById('originalText').innerHTML;  // it's from <https://codepen.io/stevn/pen/jEZvXa?editors=0010>
 	    t.innerHTML = "";                    // of course, I did have to adapt it for my own case.
 
 	    var cursorPosition = 0,
@@ -301,7 +340,7 @@ function setupTypewriter(t) {             // This is a great little feature, isn
                       if (lineCount > 2) {
                         t.innerHTML = t.innerHTML.replace(/.*\n\n/,"");
                         // t.innerHTML = t.innerHTML.slice();
-                        console.log(t.innerHTML);
+                        // console.log(t.innerHTML);
                       }
                   } else {
     	                var newSpan = document.createElement("span");
