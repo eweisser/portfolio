@@ -1,7 +1,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Eweisser.com: portfolio for Eric Weisser</title>
+<title>Eric Weisser, software and web developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Poppins&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
 <style>
 
 body {
@@ -9,8 +17,8 @@ body {
   box-sizing: border-box;
   font-family: "Calibri", "Consolas", sans-serif;
   font-size: 13pt;
-  margin: 0;
-  padding: 0;
+  margin: 0 0 100px 0;
+  padding: 0 0 100px 0;
 }
 
 div {
@@ -91,15 +99,14 @@ div {
 #content {
   background-color: #fff;
   border-radius: 3vw;
-  padding: 20px 35px;
+  font-family: 'Open Sans','Poppins','Montserrat','Calibri', sans-serif;
+  font-size: 11pt;
+  margin-bottom: 100px;
+  padding: 20px 60px;
   position: absolute;
     left: 5%;
     top: 160px;
     width: 90%;
-  animation: textAnimation;
-  animation-duration: 1s;
-  animation-delay: 1.2s;
-  animation-fill-mode: both;
 }
 
 p#intro {
@@ -107,16 +114,28 @@ p#intro {
 }
 
 .projectDiv {
+  /* background-color: #f8f8f8; */
+  /* border: 2px solid #ddd; */
+  border-bottom: 1px solid #aaa;
+  /* border-radius: 3vw; */
+  /* box-shadow: 5px 5px #888888; */
+  /* box-sizing: border-box; */
   display: grid;
     grid-template-columns: 120px auto;
     grid-column-gap: 50px;
-  margin: auto auto 40px 30px;
-  align-items: center;
+    align-items: center;
+  margin: auto auto auto auto;
+  padding: 45px;
 }
 
 .projectExampleImage {
   grid-column: 1 / span 1;
   width: 100%;
+}
+
+.projectTitle {
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .projectDescription {
@@ -216,36 +235,37 @@ a:hover {
 
 <div id="content">
     <p id="intro">
-      <b>Hello</b>, I'm Eric Weisser! Thank you for taking the time to look at my portfolio. You can also see my work on Github <b><a href="https://github.com/eweisser">here</a></b> or visit my LinkedIn profile <b><a href="https://www.linkedin.com/in/eric-weisser-5337073b/">here</a></b>. I'm adding to this page quickly—please visit again soon to see more of my work.
+      Hello, I'm Eric Weisser! Thank you for taking the time to look at my portfolio. You can also see my work on Github <b><a href="https://github.com/eweisser">here</a></b> or visit my LinkedIn profile <b><a href="https://www.linkedin.com/in/eric-weisser-5337073b/">here</a></b>. I'm adding to this page quickly—please visit again soon to see more of my work.
     </p>
 
     <div class="projectDiv">
-      <img class="projectExampleImage" src="eg_map200.png">
+      <img class="projectExampleImage" src="img/eg_map200.png">
       <div class="projectDescription">
-        <a href="names.html"><b>Analysis and visualization of the distribution of given names in the US by state in Python</b></a><br>Please note: a Django application for this project is under development.
+        <div class="projectTitle"><a href="names.html">Analysis and visualization of the distribution of given names in the US by state in Python</a></div>
+        Please note: a Django application for this project is under development.
       </div>
     </div>
 
     <div class="projectDiv">
-      <img class="projectExampleImage" src="eg_hangul_syllable_blocks4.png">
+      <img class="projectExampleImage" src="img/eg_hangul_syllable_blocks4.png">
       <div class="projectDescription">
-        <a href="hangulFreq.html"><b>Data (written Korean syllable frequency) analysis and visualization in Python and Javascript</b></a><br>
+        <div class="projectTitle"><a href="hangulFreq.html">Data (written Korean syllable frequency) analysis and visualization in Python and Javascript</a></div>
         The Korean writing system, called Hangul, is unique; each sound has a symbol, but these symbols are arranged in square blocks so that each block represents one syllable. This makes it easier to analyze syllabic patterns in Korean than in other languages.
       </div>
     </div>
 
     <div class="projectDiv">
-      <img class="projectExampleImage" src="eg_calculator_react.png">
+      <img class="projectExampleImage" src="img/eg_calculator_react.png">
       <div class="projectDescription">
-        <a href="calculator/calculator.html"><b>A simple calculator in React.js</b></a><br>
+        <div class="projectTitle"><a href="calculator/calculator.html">A simple calculator in React.js</a></div>
         Although functional, there are a few more features I'd like to implement for this calculator. I wrote it using JSX and the <a href="https://babeljs.io/repl">Babel JavaScript compiler</a>.
       </div>
     </div>
 
     <div class="projectDiv">
-      <img class="projectExampleImage" src="eg_hippo_chomp.png">
+      <img class="projectExampleImage" src="img/eg_hippo_chomp.png">
       <div class="projectDescription">
-        <b>Word games in Javascript</b><br>
+        <div class="projectTitle">Word games in Javascript</div>
         All of the following games were written for use by students I taught in my former job in South Korea; the content reflects that curriculum.
         <ul>
           <li><a href="games/storix/hippos/game1monsters.html">Hippos and watermelons</a>
@@ -258,9 +278,10 @@ a:hover {
     </div>
 
     <div class="projectDiv">
-      <img class="projectExampleImage" src="eg_hangul_lessons.png">
+      <img class="projectExampleImage" src="img/eg_hangul_lessons.png">
       <div class="projectDescription">
-        <a href="hangullessons"><b>Korean writing system lessons in Javascript</b></a>
+        <div class="projectTitle"><a href="hangullessons">Korean writing system lessons in Javascript</a></div>
+        Even though the Korean writing system is simple and logical, learning how it represents spoken Korean requires a bit of study. In this project, I wrote a series of small lessons on how to pronounce Korean characters and words. This was my first single-page application, written only in vanilla JavaScript.
       </div>
     </div>
 
@@ -278,7 +299,6 @@ a:hover {
     </p> -->
 
 </div>  <!-- end of content div -->
-
 
 <script defer>
 
