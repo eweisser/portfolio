@@ -100,7 +100,7 @@ div {
   background-color: #fff;
   border-radius: 3vw;
   font-family: 'Open Sans','Poppins','Montserrat','Calibri', sans-serif;
-  font-size: 11pt;
+  font-size: 12pt;
   margin-bottom: 100px;
   padding: 20px 60px;
   position: absolute;
@@ -156,7 +156,7 @@ a:link, a:visited, a:active {
   text-decoration: none;
   /* color: #0000A8; */
   /* color: #0040C0; */
-  color: #61afef;
+  color: #0061af;
   animation: textAnimation;
   animation-duration: 1s;
   animation-delay: 1.2s;
@@ -207,7 +207,9 @@ a:hover {
 
     ********residualsDictio[firstName][state] <span class="prpl">=</span> byNameDictio[firstName][state] <span class="prpl">-</span> byNameDictio[firstName][<span class="grn">'mean'</span>]<span class="tallChar">|</span><br></br>
 
-    <span class="darker"># And now we have a dictionary full of residuals, fantastic! Now we need a dictionary for "what percentage of a standard deviation each residual is".</span><span class="tallChar">|</span><br></br>
+    <span class="darker"># And now we have a dictionary full of residuals, fantastic!</span><span class="tallChar">|</span><br></br>
+
+    <span class="darker"># Now we need a dictionary for "what percentage of a standard deviation each residual is".</span><span class="tallChar">|</span><br></br>
 
     resStDevPercDictio <span class="prpl">=</span> byNameDictio.<span class="blue">copy</span>()<span class="tallChar">|</span><br></br>
 
@@ -369,14 +371,16 @@ function setupTypewriter(t) {             // This is a great little feature, isn
     	                tag = newSpan.firstChild;
                   }
 	            }
-              // console.log(tag);
 	        }
 
 	        cursorPosition += 1;
 	        if (cursorPosition < HTML.length - 1) {
 	            setTimeout(type, tempTypeSpeed);
-	        }
-
+	        } else {
+              typewriter = setupTypewriter(typer);
+              typewriter.type();
+          }
+          // typewriter.type();
 	    };
 
 	    return {
@@ -385,8 +389,9 @@ function setupTypewriter(t) {             // This is a great little feature, isn
 	}
 
 	var typer = document.getElementById('typewriter');
-	typewriter = setupTypewriter(typer);
+	typewriter = setupTypewriter(typer);       // so setupTyperwriter is a function, it returns an object/dictionary. So 'typewriter' is an object. An object that is created as a result of calling setupTypewriter has a property called 'type'. The value of type is also a function.
 	typewriter.type();
+  console.log("Here it is.");
 
 </script>
 
