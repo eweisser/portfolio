@@ -139,8 +139,18 @@ p#intro {
 }
 
 .projectDescription {
-  background-color: #fff;
+  /* background-color: #fff; */
   grid-column: 2 / span 1;
+}
+
+#footer {
+  color: #0f0;
+  font-size: 60pt;
+  position: absolute;
+    left: 0;
+    top: 0;
+    height: 50px;
+    width: 90%;
 }
 
 ul {
@@ -171,6 +181,12 @@ a:hover {
   animation-duration: 1s;
   animation-delay: 1.2s;
   animation-fill-mode: both;
+}
+
+@media only screen and (max-width: 600px) {
+  #content {
+    background-color: #4488ff;
+  }
 }
 
 </style>
@@ -302,6 +318,9 @@ a:hover {
 
 </div>  <!-- end of content div -->
 
+<div id="footer">
+</div>
+
 <script defer>
 
 function setupTypewriter(t) {             // This is a great little feature, isn't it? I can't take credit it for it,
@@ -391,7 +410,19 @@ function setupTypewriter(t) {             // This is a great little feature, isn
 	var typer = document.getElementById('typewriter');
 	typewriter = setupTypewriter(typer);       // so setupTyperwriter is a function, it returns an object/dictionary. So 'typewriter' is an object. An object that is created as a result of calling setupTypewriter has a property called 'type'. The value of type is also a function.
 	typewriter.type();
-  console.log("Here it is.");
+
+  window.onload = function() {
+    var heightOfContent = document.getElementById('content').offsetHeight;
+    document.getElementById("footer").style.top = (200 + heightOfContent) + "px";
+  };
+
+  // console.log(document.getElementById('content').offsetHeight + "px;");
+
+  // var sum = heightOfHeader + heightOfContent;
+  // console.log("The height of the header div is " + heightOfHeader);
+  // console.log("The height of the content div is " + heightOfContent);
+  // console.log("Their sum is " + sum);
+
 
 </script>
 
