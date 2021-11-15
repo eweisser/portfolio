@@ -1,6 +1,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eric Weisser, software and web developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -183,9 +184,40 @@ a:hover {
   animation-fill-mode: both;
 }
 
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
+  #typewriter {
+    position: relative;
+    white-space: nowrap;
+  }
   #content {
-    background-color: #4488ff;
+    font-size: 16pt;
+  }
+  .projectDiv {
+    background-color: #f00;
+    border-bottom: 1px solid #aaa;
+    /* border-radius: 3vw; */
+    /* box-shadow: 5px 5px #888888; */
+    /* box-sizing: border-box; */
+    display: grid;
+      grid-template-rows: none none none;
+      /* grid-column-gap: 10px; */
+      /* align-items: center; */
+    margin: auto auto auto auto;
+    /* padding: 30px; */
+  }
+  .projectExampleImage {
+    grid-row: 1 / 2;
+    /* width: 100%; */
+  }
+  .projectTitle {
+    background-color: #0f0;
+    font-weight: bold;
+    grid-row: 2 / 3;
+    /* margin-bottom: 8px; */
+  }
+  .projectDescription {
+    background-color: #ff0;
+    grid-row: 3 / 4;
   }
 }
 
@@ -258,18 +290,14 @@ a:hover {
 
     <div class="projectDiv">
       <img class="projectExampleImage" src="img/eg_map200.png">
-      <div class="projectDescription">
-        <div class="projectTitle"><a href="names.html">Analysis and visualization of the distribution of given names in the US by state in Python</a></div>
-        Please note: a Django application for this project is under development.
-      </div>
+      <div class="projectTitle"><a href="names.html">Analysis and visualization of the distribution of given names in the US by state in Python</a></div>
+      <div class="projectDescription">Please note: a Django application for this project is under development.</div>
     </div>
 
     <div class="projectDiv">
       <img class="projectExampleImage" src="img/eg_hangul_syllable_blocks4.png">
-      <div class="projectDescription">
         <div class="projectTitle"><a href="hangulFreq.html">Data (written Korean syllable frequency) analysis and visualization in Python and Javascript</a></div>
-        The Korean writing system, called Hangul, is unique; each sound has a symbol, but these symbols are arranged in square blocks so that each block represents one syllable. This makes it easier to analyze syllabic patterns in Korean than in other languages.
-      </div>
+        <div class="projectDescription">The Korean writing system, called Hangul, is unique; each sound has a symbol, but these symbols are arranged in square blocks so that each block represents one syllable. This makes it easier to analyze syllabic patterns in Korean than in other languages.</div>
     </div>
 
     <div class="projectDiv">
