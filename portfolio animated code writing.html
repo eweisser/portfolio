@@ -116,32 +116,35 @@ p#intro {
 
 .projectDiv {
   /* background-color: #f8f8f8; */
-  /* border: 2px solid #ddd; */
-  border-bottom: 1px solid #aaa;
+  border: 2px double #ff9933;
+  /* border-bottom: 1px solid #aaa;      < use this */
   /* border-radius: 3vw; */
   /* box-shadow: 5px 5px #888888; */
   /* box-sizing: border-box; */
   display: grid;
     grid-template-columns: 120px auto;
     grid-column-gap: 50px;
-    align-items: center;
+    /* align-items: center; */
   margin: auto auto auto auto;
   padding: 45px;
 }
 
 .projectExampleImage {
-  grid-column: 1 / span 1;
+  border: 2px dotted #99ff33;
+  grid-column: 1 / 2;
   width: 100%;
 }
 
 .projectTitle {
+  border: 2px dotted #ff3399;
   font-weight: bold;
   margin-bottom: 8px;
+  grid-column: 2 / 3;
 }
 
 .projectDescription {
-  /* background-color: #fff; */
-  grid-column: 2 / span 1;
+  border: 2px dotted #3399ff;
+  grid-column: 2 / 3;
 }
 
 #footer {
@@ -190,34 +193,45 @@ a:hover {
     white-space: nowrap;
   }
   #content {
-    font-size: 16pt;
+    font-size: 15pt;
+    padding: 0;
+  }
+  #intro {
+    padding: 30px;
   }
   .projectDiv {
-    background-color: #f00;
+    /* background-color: #f0f0f0; */
     border-bottom: 1px solid #aaa;
     /* border-radius: 3vw; */
     /* box-shadow: 5px 5px #888888; */
     /* box-sizing: border-box; */
     display: grid;
-      grid-template-rows: none none none;
-      /* grid-column-gap: 10px; */
-      /* align-items: center; */
-    margin: auto auto auto auto;
-    /* padding: 30px; */
+      grid-template-rows: auto auto auto;
+      grid-template-columns: auto;
+      grid-row-gap: 10px;
+      align-items: center;
+    /* margin: auto auto auto auto; */
+    padding: 30px;
   }
   .projectExampleImage {
+    width: 50%;
     grid-row: 1 / 2;
+    grid-column: 1 / span 1;
+    margin: auto auto 10px auto;
     /* width: 100%; */
   }
   .projectTitle {
-    background-color: #0f0;
+    /* background-color: #0f0; */
     font-weight: bold;
     grid-row: 2 / 3;
+    grid-column: 1 / span 1;
+    /* text-align: center; */
     /* margin-bottom: 8px; */
   }
   .projectDescription {
-    background-color: #ff0;
+    /* background-color: #ff0; */
     grid-row: 3 / 4;
+    grid-column: 1 / span 1;
   }
 }
 
@@ -296,22 +310,20 @@ a:hover {
 
     <div class="projectDiv">
       <img class="projectExampleImage" src="img/eg_hangul_syllable_blocks4.png">
-        <div class="projectTitle"><a href="hangulFreq.html">Data (written Korean syllable frequency) analysis and visualization in Python and Javascript</a></div>
-        <div class="projectDescription">The Korean writing system, called Hangul, is unique; each sound has a symbol, but these symbols are arranged in square blocks so that each block represents one syllable. This makes it easier to analyze syllabic patterns in Korean than in other languages.</div>
+      <div class="projectTitle"><a href="hangulFreq.html">Data (written Korean syllable frequency) analysis and visualization in Python and Javascript</a></div>
+      <div class="projectDescription">The Korean writing system, called Hangul, is unique; each sound has a symbol, but these symbols are arranged in square blocks so that each block represents one syllable. This makes it easier to analyze syllabic patterns in Korean than in other languages.</div>
     </div>
 
     <div class="projectDiv">
       <img class="projectExampleImage" src="img/eg_calculator_react.png">
-      <div class="projectDescription">
-        <div class="projectTitle"><a href="calculator/calculator.html">A simple calculator in React.js</a></div>
-        Although functional, there are a few more features I'd like to implement for this calculator. I wrote it using JSX and the <a href="https://babeljs.io/repl">Babel JavaScript compiler</a>.
-      </div>
+      <div class="projectTitle"><a href="calculator/calculator.html">A simple calculator in React.js</a></div>
+      <div class="projectDescription">Although functional, there are a few more features I'd like to implement for this calculator. I wrote it using JSX and the <a href="https://babeljs.io/repl">Babel JavaScript compiler</a>.</div>
     </div>
 
     <div class="projectDiv">
       <img class="projectExampleImage" src="img/eg_hippo_chomp.png">
+      <div class="projectTitle">Word games in Javascript</div>
       <div class="projectDescription">
-        <div class="projectTitle">Word games in Javascript</div>
         All of the following games were written for use by students I taught in my former job in South Korea; the content reflects that curriculum.
         <ul>
           <li><a href="games/storix/hippos/game1monsters.html">Hippos and watermelons</a>
