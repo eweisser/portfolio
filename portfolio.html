@@ -1,0 +1,490 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eric Weisser, software and web developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Poppins&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<style>
+
+body {
+  background-color: #282c34;
+  box-sizing: border-box;
+  font-family: "Calibri", "Consolas", sans-serif;
+  font-size: 13pt;
+  margin: 0 0 100px 0;
+  padding: 0 0 100px 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+#header {
+  background-color: #282c34;
+  color: #abb2bf;
+  font-family: "Menlo", "Consolas", "DejaVu Sans Mono", monospace;
+  font-size: 15px;
+  line-height: 20px;
+  overflow: hidden;
+  padding: 12px;
+  position: absolute;
+    left: 0;
+    height: 108px;
+    width: 95vw;
+  white-space: nowrap;
+}
+
+#headerheader {
+  margin-bottom: 0.5em;
+}
+
+.lighter {
+  color: #ffffff;
+}
+
+.darker {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.orng {
+  color: #d19a66;
+}
+
+.grn {
+  color: #98c379;
+}
+
+.blue {
+  color: #61afef;
+}
+
+.prpl {
+  color: #c678dd;
+}
+
+.tallChar {
+  font-size: 20px;
+  visibility: hidden;
+}
+
+#typewriter {
+  position: relative;
+  white-space: normal;
+}
+
+#typewriter::after {
+			content: "|";
+			animation: blink 0.9s linear 0s infinite alternate none running;
+      animation-timing-function: cubic-bezier(1,0,0,1);
+      color: #528bff;
+      font-size: 20px;
+      font-weight: bolder;
+}
+
+@keyframes blink {
+	50% {opacity: 0;}
+}
+
+#originalText {
+  display: none;
+}
+
+#content {
+  background-color: #fff;
+  border-radius: 3vw;
+  font-family: 'Open Sans','Poppins','Montserrat','Calibri', sans-serif;
+  font-size: 12pt;
+  margin-bottom: 100px;
+  padding: 20px 60px;
+  position: absolute;
+    left: 5%;
+    top: 160px;
+    width: 90%;
+}
+
+p#intro {
+  margin-bottom: 30px;
+}
+
+.projectDiv {
+  /* background-color: #f8f8f8; */
+  /* border: 2px double #ff9933; */
+  border-bottom: 1px solid #aaa;
+  /* border-radius: 3vw; */
+  /* box-shadow: 5px 5px #888888; */
+  /* box-sizing: border-box; */
+  display: grid;
+    grid-template-columns: 120px auto;
+    grid-column-gap: 50px;
+    /* align-items: center; */
+  margin: auto auto auto auto;
+  padding: 45px;
+}
+
+.projectExampleImage {
+  /* border: 2px dotted #99ff33; */
+  grid-column: 1 / 2;
+  width: 100%;
+}
+
+.projectDivRightSide {
+  grid-column: 2 / 3;
+}
+
+.projectTitle {
+  /* border: 2px dotted #ff3399; */
+  font-weight: bold;
+  height: fit-content;
+  margin-bottom: 8px;
+}
+
+.projectDescription {
+  /* border: 2px dotted #3399ff; */
+}
+
+#footer {
+  color: #0f0;
+  font-size: 60pt;
+  position: absolute;
+    left: 0;
+    top: 0;
+    height: 50px;
+    width: 90%;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 40px;
+}
+
+.indent {
+  margin-left: 20px;
+}
+
+a:link, a:visited, a:active {
+  text-decoration: none;
+  /* color: #0000A8; */
+  /* color: #0040C0; */
+  color: #0061af;
+  animation: textAnimation;
+  animation-duration: 1s;
+  animation-delay: 1.2s;
+  animation-fill-mode: both;
+}
+
+a:hover {
+  text-decoration: none;
+  /* color: #0000A8; */
+  color: #007FFF;
+  animation: textAnimation;
+  animation-duration: 1s;
+  animation-delay: 1.2s;
+  animation-fill-mode: both;
+}
+
+@media (max-width: 600px) {
+  #typewriter {
+    position: relative;
+    white-space: nowrap;
+  }
+  #content {
+    font-size: 15pt;
+    padding: 5px;
+  }
+  #intro {
+    padding: 30px;
+  }
+  .projectDiv {
+    /* background-color: #f0f0f0; */
+    border-bottom: 1px solid #aaa;
+    /* border-radius: 3vw; */
+    /* box-shadow: 5px 5px #888888; */
+    /* box-sizing: border-box; */
+    display: grid;
+      grid-template-rows: auto auto;
+      grid-template-columns: auto;
+      grid-row-gap: 10px;
+      align-items: center;
+    /* margin: auto auto auto auto; */
+    padding: 30px;
+  }
+  .projectExampleImage {
+    width: 50%;
+    grid-row: 1 / 2;
+    grid-column: 1 / span 1;
+    margin: auto auto 10px auto;
+  }
+  .projectDivRightSide {
+    grid-row: 2 / 3;
+    grid-column: 1 / span 1;
+  }
+  .projectTitle {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  .projectDescription {
+    /* background-color: #ff0; */
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="header">
+
+  <div id="headerheader"><span class="lighter">Eric Weisser</span>, software <span class="prpl">and</span> web developer. <span class="darker"># Coder. Linguist. Teacher. Onomasticist. Board game enthusiast. Baker. Clarinetist. 한국어를 공부하는 학생. Cat guy.</span></div>
+
+  <div id="typewriter">
+  </div>
+
+  <div id="originalText">
+    <span class="prpl">for</span> firstName <span class="prpl">in</span> byNameDictio.<span class="blue">keys</span>():<span class="tallChar">|</span><br></br>
+
+    ****mean <span class="prpl">=</span> statistics.<span class="blue">mean</span>(byNameDictio[firstName].<span class="blue">values</span>())<span class="tallChar">|</span><br></br>
+
+    ****pStDev <span class="prpl">=</span> statistics.<span class="blue">pstdev</span>(byNameDictio[firstName].<span class="blue">values</span>())<span class="tallChar">|</span><br></br>
+
+    ****byNameDictio[firstName][<span class="grn">'mean'</span>] <span class="prpl">=</span> mean<span class="tallChar">|</span><br></br>
+
+    ****byNameDictio[firstName][<span class="grn">'pStDev'</span>] <span class="prpl">=</span> pStDev<span class="tallChar">|</span><br></br>
+
+    <span class="darker"># Great, we've included the mean and the standard deviation (p-type). Now we need to create a dictionary for residuals.</span><span class="tallChar">|</span><br></br>
+
+    residualsDictio <span class="prpl">=</span> byNameDictio.<span class="blue">copy</span>()***<span class="darker"># The .copy() method makes an independent copy--they're not linked</span><span class="tallChar">|</span><br></br>
+
+    <span class="prpl">for</span> firstName <span class="prpl">in</span> residualsDictio.<span class="blue">keys</span>():<span class="tallChar">|</span><br></br>
+
+    ****<span class="prpl">for</span> state <span class="prpl">in</span> residualsDictio[firstName].<span class="blue">keys</span>():<span class="tallChar">|</span><br></br>
+
+    ********residualsDictio[firstName][state] <span class="prpl">=</span> byNameDictio[firstName][state] <span class="prpl">-</span> byNameDictio[firstName][<span class="grn">'mean'</span>]<span class="tallChar">|</span><br></br>
+
+    <span class="darker"># And now we have a dictionary full of residuals, fantastic!</span><span class="tallChar">|</span><br></br>
+
+    <span class="darker"># Now we need a dictionary for "what percentage of a standard deviation each residual is".</span><span class="tallChar">|</span><br></br>
+
+    resStDevPercDictio <span class="prpl">=</span> byNameDictio.<span class="blue">copy</span>()<span class="tallChar">|</span><br></br>
+
+    <span class="prpl">for</span> firstName <span class="prpl">in</span> resStDevPercDictio.<span class="blue">keys</span>():</span><span class="tallChar">|</span><br></br>
+
+    ****<span class="prpl">for</span> state <span class="prpl">in</span> resStDevPercDictio[firstName].<span class="blue">keys</span>():</span><span class="tallChar">|</span><br></br>
+
+    ********<span class="prpl">if</span> byNameDictio[firstName][<span class="grn">'pStDev'</span>] <span class="prpl">!=</span> <span class="orng">0</span>:</span><span class="tallChar">|</span><br></br>
+
+    ************resStDevPercDictio[firstName][state] <span class="prpl">=</span> residualsDictio[firstName][state] <span class="prpl">/</span> byNameDictio[firstName][<span class="grn">'pStDev'</span>]</span><span class="tallChar">|</span><br></br>
+
+    ****resStDevPercDictio[firstName].<span class="blue">pop</span>(<span class="grn">'mean'</span>)</span><span class="tallChar">|</span><br></br>
+
+    ****resStDevPercDictio[firstName].<span class="blue">pop</span>(<span class="grn">'pStDev'</span>)</span><span class="tallChar">|</span><br></br>
+
+    <span class="darker"># for key in resStDevPercDictio.keys():</span></span><span class="tallChar">|</span><br></br>
+
+    ****<span class="darker"># print(key)</span></span><span class="tallChar">|</span><br></br>
+
+    <span class="prpl">return</span> resStDevPercDictio</span><span class="tallChar">|</span><br></br>
+
+  </div>
+
+</div>
+
+<div id="content">
+    <p id="intro">
+      Hello, I'm Eric Weisser! Thank you for taking the time to look at my portfolio. You can also see my work on Github <b><a href="https://github.com/eweisser">here</a></b> or visit my LinkedIn profile <b><a href="https://www.linkedin.com/in/eric-weisser-5337073b/">here</a></b>. I'm adding to this page quickly—please visit again soon to see more of my work.
+    </p>
+
+    <div class="projectDiv">
+      <img class="projectExampleImage" src="img/eg_genealogy_heroku.png">
+      <div class="projectDivRightSide">
+        <div class="projectTitle"><a href="https://eww-genealogy.herokuapp.com/">Genealogy with Django on Heroku</a></div>
+        <div class="projectDescription">I've made a genealogy website for my family.</div>
+        <!-- <div class="projectTitle"><a href="names.html">Analysis and visualization of the distribution of given names in the US by state in Python</a></div> -->
+        <!-- <div class="projectDescription">Please note: a Django application for this project is under development.</div> -->
+      </div>
+    </div>
+
+    <div class="projectDiv">
+      <img class="projectExampleImage" src="img/eg_map200.png">
+      <div class="projectDivRightSide">
+        <div class="projectTitle"><a href="https://eww.pythonanywhere.com/names/">Analysis and visualization of the distribution of given names in the US by state with Django</a></div>
+        <div class="projectDescription">My Django application is up and running, but still needs a lot of work. See my original explanation page <b><a href="names.html">here</a></b> for an extended description of the project.</div>
+        <!-- <div class="projectTitle"><a href="names.html">Analysis and visualization of the distribution of given names in the US by state in Python</a></div> -->
+        <!-- <div class="projectDescription">Please note: a Django application for this project is under development.</div> -->
+      </div>
+    </div>
+
+    <div class="projectDiv">
+      <img class="projectExampleImage" src="img/eg_hangul_syllable_blocks4.png">
+      <div class="projectDivRightSide">
+        <div class="projectTitle"><a href="hangulFreq.html">Data (written Korean syllable frequency) analysis and visualization in Python and Javascript</a></div>
+        <div class="projectDescription">The Korean writing system, called Hangul, is unique; each sound has a symbol, but these symbols are arranged in square blocks so that each block represents one syllable. This makes it easier to analyze syllabic patterns in Korean than in other languages.</div>
+      </div>
+    </div>
+
+    <div class="projectDiv">
+      <img class="projectExampleImage" src="img/eg_calculator_react.png">
+      <div class="projectDivRightSide">
+        <div class="projectTitle"><a href="calculator/calculator.html">A simple calculator in React.js</a></div>
+        <div class="projectDescription">Although functional, there are a few more features I'd like to implement for this calculator. I wrote it using JSX and the <a href="https://babeljs.io/repl">Babel JavaScript compiler</a>.</div>
+      </div>
+    </div>
+
+    <div class="projectDiv">
+      <img class="projectExampleImage" src="img/eg_hippo_chomp.png">
+      <div class="projectDivRightSide">
+        <div class="projectTitle">Word games in Javascript</div>
+        <div class="projectDescription">
+          All of the following games were written for use by students I taught in my former job in South Korea; the content reflects that curriculum.
+          <ul>
+            <li><a href="games/storix/hippos/game1monsters.html">Hippos and watermelons</a>
+            <li><a href="games/storix/platform/game2monsters.html">Platformer</a>
+            <li><a href="games/storix/butterflies/game3monsters.html">Butterflies</a>
+            <li><a href="games/storix/bakery/game4monsters.html">Bakery</a>
+            <li><a href="games/spaceship">Spaceship</a>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="projectDiv">
+      <img class="projectExampleImage" src="img/eg_hangul_lessons.png">
+      <div class="projectDivRightSide">
+        <div class="projectTitle"><a href="hangullessons">Korean writing system lessons in Javascript</a></div>
+        <div class="projectDescription">Even though the Korean writing system is simple and logical, learning how it represents spoken Korean requires a bit of study. In this project, I wrote a series of small lessons on how to pronounce Korean characters and words. This was my first single-page application, written only in vanilla JavaScript.</div>
+      </div>
+    </div>
+
+    <p class="indent">
+      <b>Projects coming soon:</b>
+      <ul>
+        <li>Genealogy database in Python and SQL
+        <li>Word guessing game with simple AI in Python
+        <li>Data (CO<sub>2</sub> emissions) analysis and visualization in Python with matplotlib
+      </ul>
+    </p>
+
+    <!-- <p>
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    </p> -->
+
+</div>  <!-- end of content div -->
+
+<div id="footer">
+</div>
+
+<script defer>
+
+function setupTypewriter(t) {             // This is a great little feature, isn't it? I can't take credit it for it,
+	    var HTML = document.getElementById('originalText').innerHTML;  // it's from <https://codepen.io/stevn/pen/jEZvXa?editors=0010>
+	    t.innerHTML = "";                    // of course, I did have to adapt it for my own case.
+
+	    var cursorPosition = 0,
+	        tag = "",
+	        writingTag = false,
+	        tagOpen = false,
+	        typeSpeed = 10,
+          tempTypeSpeed = 0;
+          lineCount = 0;
+
+	    var type = function() {
+
+	        if (writingTag === true) {
+	            tag += HTML[cursorPosition];
+	        }
+
+	        if (HTML[cursorPosition] === "<") {    // when we encounter a '<' symbol, freeze the typeSpeed, then check if tagOpen is true
+	            tempTypeSpeed = 0;
+	            if (tagOpen) {
+	                tagOpen = false;
+	                writingTag = true;
+	            } else {               // if we haven't finished writing an opening tag...
+	                tag = "";
+	                tagOpen = true;
+	                writingTag = true;
+	                tag += HTML[cursorPosition];   // write the current text in 'tag'
+	            }
+	        }
+
+	        if (!writingTag && tagOpen) {
+	            tag.innerHTML += HTML[cursorPosition];
+	        }
+	        if (!writingTag && !tagOpen) {                   // normal text writing condition--stuff just gets added to t's innerHTML
+	            if (HTML[cursorPosition] === " ") {
+	                tempTypeSpeed = 0;
+	            }
+	            else {
+	                tempTypeSpeed = typeSpeed + Math.floor(Math.random()*20);
+	            }
+              if (HTML[cursorPosition] === "*") {
+                  t.innerHTML += "&nbsp;";
+              } else {
+                  t.innerHTML += HTML[cursorPosition];
+              }
+	        }
+	        if (writingTag === true && HTML[cursorPosition] === ">") {
+	            tempTypeSpeed = typeSpeed;
+	            writingTag = false;            // we encountered '>', so we are not writingTag anymore
+	            if (tagOpen) {
+                  if (tag === "<br>") {
+                      t.innerHTML += "<br>";
+                      lineCount += 1;
+                      // console.log(lineCount);
+                      if (lineCount > 2) {
+                        t.innerHTML = t.innerHTML.replace(/.*\n\n/,"");
+                        // t.innerHTML = t.innerHTML.slice();
+                        // console.log(t.innerHTML);
+                      }
+                  } else {
+    	                var newSpan = document.createElement("span");
+    	                t.appendChild(newSpan);
+    	                newSpan.innerHTML = tag;
+    	                tag = newSpan.firstChild;
+                  }
+	            }
+	        }
+
+	        cursorPosition += 1;
+	        if (cursorPosition < HTML.length - 1) {
+	            setTimeout(type, tempTypeSpeed);
+	        } else {
+              typewriter = setupTypewriter(typer);
+              typewriter.type();
+          }
+          // typewriter.type();
+	    };
+
+	    return {
+	        type: type
+	    };
+	}
+
+	var typer = document.getElementById('typewriter');
+	typewriter = setupTypewriter(typer);       // so setupTyperwriter is a function, it returns an object/dictionary. So 'typewriter' is an object. An object that is created as a result of calling setupTypewriter has a property called 'type'. The value of type is also a function.
+	typewriter.type();
+
+  window.onload = function() {
+    var heightOfContent = document.getElementById('content').offsetHeight;
+    document.getElementById("footer").style.top = (200 + heightOfContent) + "px";
+  };
+
+  // console.log(document.getElementById('content').offsetHeight + "px;");
+
+  // var sum = heightOfHeader + heightOfContent;
+  // console.log("The height of the header div is " + heightOfHeader);
+  // console.log("The height of the content div is " + heightOfContent);
+  // console.log("Their sum is " + sum);
+
+
+</script>
+
+</body>
+</html>
