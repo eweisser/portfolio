@@ -19,8 +19,8 @@ body {
   box-sizing: border-box;
   font-family: "Calibri", "Consolas", sans-serif;
   font-size: 13pt;
-  margin: 0 0 100px 0;
-  padding: 0 0 100px 0;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
 }
 
 .bold {
@@ -63,7 +63,7 @@ div {
   font-family: 'Open Sans','Poppins','Montserrat','Calibri', sans-serif;
   font-size: 12pt;
   margin: auto;
-  margin-bottom: 100px;
+  margin-bottom: 150px;
   width: 80%;
 }
 
@@ -133,6 +133,28 @@ a:hover {
   animation-fill-mode: both;
 }
 
+#footer {
+  background-color: #fff;
+  /* border-top: 5px dashed #f00; */
+  height: 100px;
+  position: absolute;
+  width: 100%;
+  margin: 0 0 0 0;
+}
+
+svg {
+  animation: football 5s ease-in-out infinite alternate;
+  /* background-color: #000; */
+  left: 2%;
+  position: absolute;
+  bottom: 0px;
+}
+
+@keyframes football {
+  0% {left: 2%;}
+  100% {left: 96%;}
+}
+
 @media (max-width: 600px) {
 
   #content {
@@ -195,7 +217,7 @@ a:hover {
     <div class="projectDiv">
       <img class="projectExampleImage" src="img/eg_weather_1.png">
       <div class="projectDivRightSide">
-        <div class="projectTitle"><a href="https://react-weather-app-6f5740241599.herokuapp.com/">Weather app with Node.js on Heroku</a></div>
+        <div class="projectTitle"><a href="https://react-weather-app-6f5740241599.herokuapp.com/">Weather app with Node.js and React.js on Heroku</a></div>
         <div class="projectDescription">This weather app uses two APIs to get the current weather and 7-day forecast for any city in the world.</div>
       </div>
     </div>
@@ -227,8 +249,8 @@ a:hover {
     <div class="projectDiv">
       <img class="projectExampleImage" src="img/eg_calculator_react.png">
       <div class="projectDivRightSide">
-        <div class="projectTitle"><a href="calculator/calculator.html">A simple calculator in React.js</a></div>
-        <div class="projectDescription">Although functional, there are a few more features I'd like to implement for this calculator. I wrote it using JSX and the <a href="https://babeljs.io/repl">Babel JavaScript compiler</a>.</div>
+        <div class="projectTitle"><a href="https://react-calculator-app-3d1799f25fb6.herokuapp.com/">Calculator app with Node.js and React.js on Heroku</a></div>
+        <div class="projectDescription">Although functional, there are a few more features I'd like to implement for this calculator. <!-- I wrote it using JSX and the <a href="https://babeljs.io/repl">Babel JavaScript compiler</a>.<!--></div>
       </div>
     </div>
 
@@ -264,11 +286,17 @@ a:hover {
       </ul>
     </p>
 
-    <!-- <p>
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    </p> -->
-
 </div>  <!-- end of content div -->
+
+
+
+<div id="footer">
+
+  <svg width="24" height="24">
+    <circle cx="12" cy="12" r="10" stroke="#0af" stroke-width="1" fill="#0bf" />
+  </svg>
+
+</div>  <!-- end of footer div -->
 
 </body>
 </html>
